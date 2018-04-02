@@ -1,0 +1,47 @@
+type User{
+    id:ID!
+    name:String!
+    email:String!
+    phone:String!
+    website:String!
+    address:Address!
+    company:Company!
+}
+
+type Address{
+    id:ID!
+    street:String!
+    suite:String!
+    city:String!
+    zipcode:String!
+    geo:Geo!
+}
+
+type Geo{
+    id:ID!
+    lat:String!
+    lng:String!
+}
+
+type Company{
+    id: ID!
+    name: String
+    catchPhrase: String
+    bs: String
+}
+
+type Query {
+    userCount:Long
+    users:[User!]!
+    usersPaginated(page:Int=0, count:Int=100, sortedBy:String="id"): [User!]!
+}
+
+input UserInput {
+    id:ID!
+    name:String!
+    email:String!
+}
+
+type Mutation {
+    update(id:ID!, name:String, email:String): Long
+}

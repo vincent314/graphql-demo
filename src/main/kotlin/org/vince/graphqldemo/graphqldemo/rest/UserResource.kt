@@ -11,6 +11,9 @@ import org.vince.graphqldemo.graphqldemo.services.UserService
 class UserResource
 @Autowired constructor(val userService: UserService) {
 
+    @GetMapping("/users/count")
+    fun userCount() = userService.userCount()
+
     @GetMapping("/users")
     fun users(): List<User> = userService.listUsers()
 

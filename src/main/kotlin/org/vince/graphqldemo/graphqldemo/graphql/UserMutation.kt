@@ -9,5 +9,6 @@ import org.vince.graphqldemo.graphqldemo.services.UserService
 class UserMutation
 @Autowired constructor(val userService: UserService)
     : GraphQLMutationResolver {
-    fun update(id: Long, name: String?, email: String?) = userService.update(id, name, email)
+    fun update(id: Long, name: String?, email: String?) =
+            userService.update(id, name, email)
 }

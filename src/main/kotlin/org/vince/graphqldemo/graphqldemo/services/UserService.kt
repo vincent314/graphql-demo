@@ -47,11 +47,11 @@ class UserService
         return userRepository.save(newUser).id
     }
 
-    fun listPosts(withUser: Boolean) =
+    fun listPosts(withUser: Boolean = true) =
             postRepository
                     .findAll()
                     .also {
-                        if(withUser) {
+                        if (withUser) {
                             it.forEach { post ->
                                 Hibernate.initialize(post.user) // Force fetching user
                             }

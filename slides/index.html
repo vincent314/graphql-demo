@@ -26,6 +26,7 @@
     <style>
         img.diagram {
             border:none !important;
+            padding: 30px;
         }
     </style>
 </head>
@@ -39,13 +40,19 @@
             <p><i class="fab fa-github"></i>http://bit.ly/graphql-demo</p>
         </section>
         <section>
+            <h1>API REST</h1>
+            <img class="diagram" src="assets/diagram.png">
+            <p><em>http://localhost:8080/users</em></p>
+            <p><em>http://localhost:8080/posts</em></p>
+        </section>
+        <section>
             <h1>GraphQL</h1>
             <ul>
                 <li>alternative à REST</li>
                 <li>language de requêtage</li>
                 <li>fortement typé</li>
-                <li>définir précisément les éléments voulus</li>
-                <li>point d'accès unique (ex: /graphql)</li>
+                <li>filtrer la réponse</li>
+                <li>point d'accès unique (ex: /graphql) GET ou POST</li>
             </ul>
         </section>
         <section>
@@ -65,23 +72,22 @@ query {
 }</code></pre>
         </section>
         <section>
-            <h2>Modèle</h2>
-            <img class="diagram" src="assets/diagram.png">
-        </section>
-        <section>
-            <h2>Requête complexe</h2>
+            <h2>Requête complexe*</h2>
             <p>multi-requête, paramètres et champs</p>
             <pre><code data-trim>
-query {
+query UsersPaginated($page:Int, $count:Int, $sortedBy:String) {
 	userCount
-	usersPaginated(page:1,count:5,sortedBy:"name"){
+	usersPaginated(page:$page,count:$count,sortedBy:$sortedBy){
+		id
 		name
+		email
 		company{
 			name
 		}
 	}
 }
             </code></pre>
+            <p>* GraphQL ne fait pas la pagination</p>
         </section>
         <section>
             <h2>Outils</h2>
@@ -95,16 +101,18 @@ query {
             <h2>Mutations</h2>
             <p>Séparation requêtes/modifications</p>
             <ul>
-                <li>Query GraphQL ~ GET REST</li>
-                <li>Mutation GraphQL ~ POST,PUT,DELETE REST</li>
+                <li><b>Query</b> GraphQL ~ GET REST</li>
+                <li><b>Mutation</b> GraphQL ~ POST,PUT,DELETE REST</li>
             </ul>
             <p>Input types</p>
         </section>
         <section>
             <h2>Schémas GraphQL</h2>
             <p>Définition des types, interfaces, fragments, input, queries et mutations</p>
+            <p>Validation des requêtes et des répponses</p>
             <p>Types racines <b>Query</b> et <b>Mutation</b></p>
-            <p>Fichiers <b>.qraphqls</b>, b{}</p>
+            <p>Exploration : <em>/graphql/schema.json</em></p>
+            <p>Documentation : <b>graphql-docs</b></p>
         </section>
         <section>
             <h2>Client JS - Apollo 1/2</h2>
@@ -119,13 +127,15 @@ query {
             </ul>
         </section>
         <section>
-            <h2>Client JS - Apollo 2/2</h2>
-            <pre><code data-trim class="javascript">
-gql`
-query {
-  userCount
-}`
-            </code></pre>
+            <h2>Apollo + VueJS</h2>
+        </section>
+        <section>
+            <h2>Scalabilité</h2>
+            <ul>
+                <li>Modularité</li>
+                <li>Réutilisation</li>
+                <li>Évolutivité</li>
+            </ul>
         </section>
         <section>
             <h2>Pour aller plus loin</h2>

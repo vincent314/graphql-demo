@@ -1,4 +1,4 @@
-package org.vince.graphqldemo.graphqldemo.domain
+package graphqldemo.domain
 
 import javax.persistence.*
 

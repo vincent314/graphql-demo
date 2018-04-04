@@ -1,4 +1,4 @@
-package org.vince.graphqldemo.graphqldemo.services
+package graphqldemo.services
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -8,10 +8,10 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
-import org.vince.graphqldemo.graphqldemo.data.PostRepository
-import org.vince.graphqldemo.graphqldemo.data.UserRepository
-import org.vince.graphqldemo.graphqldemo.domain.Post
-import org.vince.graphqldemo.graphqldemo.domain.User
+import graphqldemo.data.PostRepository
+import graphqldemo.data.UserRepository
+import graphqldemo.domain.Post
+import graphqldemo.domain.User
 import javax.annotation.PostConstruct
 import javax.transaction.Transactional
 

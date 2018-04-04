@@ -1,9 +1,9 @@
-package org.vince.graphqldemo.graphqldemo.graphql
+package graphqldemo.graphql
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import org.vince.graphqldemo.graphqldemo.services.UserService
+import graphqldemo.services.UserService
 
 @Component
 class UserMutation

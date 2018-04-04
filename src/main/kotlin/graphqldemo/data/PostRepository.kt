@@ -1,6 +1,6 @@
-package org.vince.graphqldemo.graphqldemo.data
+package graphqldemo.data
 
 import org.springframework.data.repository.CrudRepository
-import org.vince.graphqldemo.graphqldemo.domain.Post
+import graphqldemo.domain.Post
 
 interface PostRepository: CrudRepository<Post, Long>

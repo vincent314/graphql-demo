@@ -25,3 +25,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+####
+vue-client/node_modules/

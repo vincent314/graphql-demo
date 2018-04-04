@@ -1,4 +1,4 @@
-package org.vince.graphqldemo.graphqldemo
+package graphqldemo
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

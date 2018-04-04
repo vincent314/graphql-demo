@@ -30,10 +30,18 @@ type Company{
     bs: String
 }
 
+type Post {
+    id: ID!
+    title: String!
+    body: String!
+    user: User!
+}
+
 type Query {
     userCount:Long
     users:[User!]!
     usersPaginated(page:Int=0, count:Int=100, sortedBy:String="id"): [User!]!
+    posts(withUser:Boolean=true):[Post!]!
 }
 
 input UserInput {

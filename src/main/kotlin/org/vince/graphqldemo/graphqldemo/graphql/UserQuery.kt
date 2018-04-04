@@ -15,4 +15,6 @@ class UserQuery
     fun users() = userService.listUsers()
 
     fun usersPaginated(page:Int=0, count:Int=100, sortedBy:String="id") = userService.listUsersPaginated(page, count, sortedBy)
+
+    fun posts(withUser:Boolean) = userService.listPosts(withUser)
 }
